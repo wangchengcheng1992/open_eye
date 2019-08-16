@@ -6,5 +6,5 @@ package com.open.eye
  * desc:
  */
 object Constant {
-    const val BASE_URL = "http://baobab.kaiyanapp.com/"
+    const val BASE_URL = "http://baobab.kaiyanapp.com"
 }

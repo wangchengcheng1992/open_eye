@@ -20,6 +20,7 @@ class Preference<T>(val name:String, private val default:T) {
 
         private val prefs: SharedPreferences by lazy {
             MyApplication.context.getSharedPreferences(file_name, Context.MODE_PRIVATE)
+
         }
         /**
          * 删除全部数据
@@ -35,9 +36,6 @@ class Preference<T>(val name:String, private val default:T) {
             prefs.edit().remove(key).apply()
         }
     }
-
-
-
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
         return getSharedPreferences(name, default)

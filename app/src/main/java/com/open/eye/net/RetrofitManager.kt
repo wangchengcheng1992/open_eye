@@ -26,6 +26,7 @@ object RetrofitManager {
     }
 
     private var token:String by Preference("token", "")
+    private var udid:String by Preference("udid", "")
 
     /**
      * 设置公共参数
@@ -35,7 +36,7 @@ object RetrofitManager {
             val originalRequest = chain.request()
             val request:Request
             val modifiedUrl = originalRequest.url().newBuilder()
-                .addQueryParameter("udid", "d2807c895f0348a180148c9dfa6f2feeac0781b5")
+                .addQueryParameter("udid", udid)
                 .addQueryParameter("deviceModel", AppUtils.getMobileModel())
                 .build()
             request = originalRequest.newBuilder().url(modifiedUrl).build()

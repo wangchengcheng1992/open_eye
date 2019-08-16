@@ -19,6 +19,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_splash.*
 import java.util.concurrent.TimeUnit
+import kotlin.reflect.KParameter
 
 class SplashActivity : BaseActivity() {
 
@@ -29,6 +30,8 @@ class SplashActivity : BaseActivity() {
     private var shadowAnimation: AlphaAnimation? = null
     private var scaleAnimation: ScaleAnimation? = null
     private var textAnimation: AlphaAnimation? = null
+
+    private var udid:String by Preference("udid", "")
 
     init {
         textTypeface = Typeface.createFromAsset(MyApplication.context.assets, "fonts/Lobster-1.4.otf")
@@ -118,8 +121,7 @@ class SplashActivity : BaseActivity() {
 
         //获取设备的udid
         val deviceId = AppUtils.getDeviceId(this)
-        //todo
-//        Preference.setValue()
+        udid = deviceId
     }
 
     fun redirectTo() {
