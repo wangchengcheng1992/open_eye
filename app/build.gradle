@@ -55,7 +55,21 @@ dependencies {
     //多状态试图容器
     implementation 'com.classic.common:multiple-status-view:1.6'
 
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 
+    //TabLayout
+    implementation project(':FlycoTabLayout_Lib')
+
+    //状态栏
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta05'
+    // kotlin扩展（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0-beta05'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
 }

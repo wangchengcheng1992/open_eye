@@ -1,12 +1,17 @@
 package com.open.eye.ui.activity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Typeface
 import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
+import com.open.eye.MainActivity
 import com.open.eye.MyApplication
 import com.open.eye.R
 import com.open.eye.base.BaseActivity
+import com.open.eye.utils.AppUtils
+import com.open.eye.utils.Preference
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -48,7 +53,7 @@ class SplashActivity : BaseActivity() {
         alphaAnimation?.fillAfter = true
 
         //黑色阴影层渐变动画
-        shadowAnimation = AlphaAnimation(1.0f, 0.3f)
+        shadowAnimation = AlphaAnimation(1.0f, 0.0f)
         shadowAnimation?.duration = 2000
         shadowAnimation?.fillAfter = true
 
@@ -87,8 +92,8 @@ class SplashActivity : BaseActivity() {
                 }
 
                 override fun onComplete() {
-                    tv1.text = "每日精选视频推荐，让你大开眼界"
-                    tv2.text = "Daily appetizers for your eyes.Bon eyepetit"
+                    tv1.text = this@SplashActivity.getText(R.string.splash_text_1)
+                    tv2.text = this@SplashActivity.getText(R.string.splash_text_2)
 
 
                     view_shadow.startAnimation(shadowAnimation)
@@ -98,6 +103,29 @@ class SplashActivity : BaseActivity() {
                 }
 
             })
+
+        scaleAnimation?.setAnimationListener(object : Animation.AnimationListener{
+            override fun onAnimationRepeat(p0: Animation?) {
+            }
+
+            override fun onAnimationEnd(p0: Animation?) {
+                redirectTo()
+            }
+
+            override fun onAnimationStart(p0: Animation?) {
+            }
+        })
+
+        //获取设备的udid
+        val deviceId = AppUtils.getDeviceId(this)
+        //todo
+//        Preference.setValue()
+    }
+
+    fun redirectTo() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     override fun start() {

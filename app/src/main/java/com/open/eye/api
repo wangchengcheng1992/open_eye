@@ -1,0 +1,49 @@
+首页部分：
+    发现
+        发现列表接口：http://baobab.kaiyanapp.com/api/v5/index/tab/feed
+        参数：udid,
+            vc=531,
+            vn=5.8,
+            size=1080X2016,
+            deviceModel=16th,
+            first_channel=eyepetizer_meizu_market,
+            last_channel=eyepetizer_meizu_market,
+            system_version_code=27
+        事例：http://baobab.kaiyanapp.com/api/v5/index/tab/feed?vn=5.8&vc=531&deviceModel=16th&size=1080X2016&first_channel=eyepetizer_meizu_market&last_channel=eyepetizer_meizu_market&system_version_code=27
+
+    推荐
+
+    日报
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
